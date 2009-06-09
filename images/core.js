@@ -543,6 +543,10 @@
 			if (arguments.length > 1) args = arguments;
 			else args = theArgs;
 			this.id = args[0] || null;
+      // we set the tmpId more than the current id
+      if (this.id >= tmpId) {
+        tmpId = this.id + 1;
+      }
 			this.setUrl(location.href);
 			this.setTitle(document.title);
 			this.move(args[1] || 100, args[2] || 100);
